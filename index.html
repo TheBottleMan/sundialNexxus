@@ -42,17 +42,37 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full max-w-4xl mb-12">
-            <button class="entrada-btn relative flex flex-col items-center justify-center rounded-xl py-20 transition-transform hover:scale-[1.02] active:scale-95 shadow-xl">
+            <button id="startWork" class="entrada-btn relative flex flex-col items-center justify-center rounded-xl py-20 transition-transform hover:scale-[1.02] active:scale-95 shadow-xl">
                 <span class="material-symbols-outlined text-[64px] mb-4 icon-dark">play_circle</span>
                 <span class="text-4xl font-bold text-dark mb-2">Entrada</span>
                 <span class="font-mono text-sm text-dark opacity-80">Iniciar Jornada</span>
             </button>
 
-            <button class="salida-btn relative flex flex-col items-center justify-center rounded-xl py-20 transition-transform hover:scale-[1.02] active:scale-95 shadow-xl">
+            <button id="endWork" class="salida-btn relative flex flex-col items-center justify-center rounded-xl py-20 transition-transform hover:scale-[1.02] active:scale-95 shadow-xl">
                 <span class="material-symbols-outlined text-[64px] mb-4 text-white">stop_circle</span>
                 <span class="text-4xl font-bold text-white mb-2">Salida</span>
                 <span class="font-mono text-sm text-white opacity-80">Finalizar Jornada</span>
             </button>
+        </div>
+
+        <div class="avisoInicioSalida" id="startWorkCard">
+            <div class="aviso_content">
+                <h2>something for now</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deleniti praesentium accusamus, error at nesciunt tempore iste fugiat repellendus ex illo? Voluptates debitis voluptas vitae dicta architecto assumenda consectetur accusantium?
+                </p>
+                <button id="startCardClose">Close</button>
+            </div>
+        </div>
+
+        <div class="avisoInicioSalida" id="endWorkCard">
+            <div class="aviso_content">
+                <h2>something for now</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor deleniti praesentium accusamus, error at nesciunt tempore iste fugiat repellendus ex illo? Voluptates debitis voluptas vitae dicta architecto assumenda consectetur accusantium?
+                </p>
+                <button id="endCardClose">Close</button>
+            </div>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-6">
