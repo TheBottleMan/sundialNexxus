@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundial Nexxus - Chronos System</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="/src/views/css/indexEmpleado.css">
+</head>
+<body class="relative min-h-screen flex flex-col font-sans text-white">
+
+    <div class="fixed inset-0 z-[-1]">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover blur-[4px] brightness-50" alt="Background">
+    </div>
+
+    <header class="w-full px-8 md:px-16 py-6 flex justify-between items-center z-10">
+        <div class="text-2xl font-bold tracking-tight">Sundial Nexxus</div>
+        <nav class="hidden md:flex gap-8 text-sm">
+            <a href="#" class="border-b-2 border-white pb-1 font-semibold">Inicio</a>
+            <a href="/src/views/pages/horariosEmpleado.html" class="opacity-80 hover:opacity-100 pb-1 transition-opacity">Ver Horarios</a>
+            <a href="/src/views/pages/reporteHorasEmpleado.html" class="opacity-80 hover:opacity-100 pb-1 transition-opacity">Reporte de Horas</a>
+            <a href="#" class="opacity-80 hover:opacity-100 pb-1 transition-opacity">Pagos</a>
+        </nav>
+        <div class="flex items-center gap-6">
+            <span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity">notifications</span>
+            <div class="w-10 h-10 rounded-full bg-gray-600 border border-white/30 overflow-hidden">
+                <img src="https://i.pravatar.cc/100" alt="Avatar" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center px-4 w-full z-10 pb-20 mt-10">
+        
+        <div class="text-center mb-12">
+            <h1 class="text-5xl md:text-[64px] font-extrabold mb-3 tracking-wide drop-shadow-lg uppercase">Chronos System</h1>
+            <p class="font-mono text-xs md:text-sm tracking-[0.3em] uppercase opacity-90 drop-shadow-md">Smart. Productive. Connected.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full max-w-4xl mb-12">
+            <button class="entrada-btn relative flex flex-col items-center justify-center rounded-xl py-20 transition-transform hover:scale-[1.02] active:scale-95 shadow-xl">
+                <span class="material-symbols-outlined text-[64px] mb-4 icon-dark">play_circle</span>
+                <span class="text-4xl font-bold text-dark mb-2">Entrada</span>
+                <span class="font-mono text-sm text-dark opacity-80">Iniciar Jornada</span>
+            </button>
+
+            <button class="salida-btn relative flex flex-col items-center justify-center rounded-xl py-20 transition-transform hover:scale-[1.02] active:scale-95 shadow-xl">
+                <span class="material-symbols-outlined text-[64px] mb-4 text-white">stop_circle</span>
+                <span class="text-4xl font-bold text-white mb-2">Salida</span>
+                <span class="font-mono text-sm text-white opacity-80">Finalizar Jornada</span>
+            </button>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-6">
+            <div class="glass-pill flex items-center gap-4 px-8 py-5 rounded-md">
+                <span class="material-symbols-outlined opacity-80 text-3xl">schedule</span>
+                <div class="text-left" id="clock-container">
+                    <p class="text-[11px] uppercase tracking-wider opacity-70 mb-1">Hora Actual</p>
+                    <p class="text-2xl font-bold leading-none" id="clock">00:00:00</p>
+                </div>
+            </div>
+            <div class="glass-pill flex items-center gap-4 px-8 py-5 rounded-md">
+                <span class="material-symbols-outlined opacity-80 text-3xl">location_on</span>
+                <div class="text-left">
+                    <p class="text-[11px] uppercase tracking-wider opacity-70 mb-1" id="shareLocation">Ubicación</p>
+                    <p class="text-2xl font-bold leading-none" id="currentLocation">Cargando...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-[#eaeaea] text-[#1a1a1a] py-8 px-8 md:px-16 z-20 mt-auto shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-sm tracking-widest mb-1 uppercase">Sundial Nexxus</p>
+                <p class="text-xs opacity-70 font-medium">© 2024 Sundial Nexxus Chronos System. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="#" class="hover:text-gray-500 transition-colors">Privacidad</a>
+                <a href="#" class="hover:text-gray-500 transition-colors">Términos de Servicio</a>
+                <a href="#" class="hover:text-gray-500 transition-colors">Centro de Ayuda</a>
+                <a href="#" class="hover:text-gray-500 transition-colors">Soporte Técnico</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/views/js/main-index.js"></script>
+</body>
+</html>

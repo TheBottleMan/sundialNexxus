@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundial Nexxus - Horarios</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/views/css/calendarioEmpleado.css">
+</head>
+    <header class="w-full px-8 md:px-16 py-6 flex justify-between items-center z-10">
+        <div class="text-2xl font-bold tracking-tight">Sundial Nexxus</div>
+        <nav class="hidden md:flex gap-8 text-sm">
+            <a href="/index.html" class="opacity-80 hover:opacity-100 pb-1 transition-opacity">Inicio</a>
+            <a href="#" class="border-b-2 border-white pb-1 font-semibold">Ver Horarios</a>
+            <a href="/src/views/pages/reporteHorasEmpleado.html" class="opacity-80 hover:opacity-100 pb-1 transition-opacity">Reporte de Horas</a>
+            <a href="#" class="opacity-80 hover:opacity-100 pb-1 transition-opacity">Pagos</a>
+        </nav>
+        <div class="flex items-center gap-6">
+            <span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity">notifications</span>
+            <div class="w-10 h-10 rounded-full bg-gray-600 border border-white/30 overflow-hidden">
+                <img src="https://i.pravatar.cc/100" alt="Avatar" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </header>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col font-sans">
+
+    <main class="flex-grow flex flex-col items-center py-12 px-4 md:px-8 max-w-6xl mx-auto w-full">
+        
+        <div class="w-full mb-8 flex justify-between items-end border-b border-gray-700 pb-4">
+            <div>
+                <h1 class="text-3xl font-bold uppercase tracking-wide">Gestión de Horarios</h1>
+                <p class="text-gray-400 font-mono text-sm mt-1">Selecciona un día para ver tu turno asignado</p>
+            </div>
+            <div class="flex gap-2">
+                <button id="mes-anterior" class="btn-nav material-symbols-outlined rounded p-2 bg-gray-800 hover:bg-gray-700 transition">chevron_left</button>
+                <h2 id="titulo-mes" class="text-xl font-semibold px-4 py-1">Junio 2026</h2>
+                <button id="mes-siguiente" class="btn-nav material-symbols-outlined rounded p-2 bg-gray-800 hover:bg-gray-700 transition">chevron_right</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            
+            <div class="lg:col-span-2 bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
+                
+                <div class="grid grid-cols-7 gap-2 mb-4 text-center font-mono text-sm text-gray-400 uppercase">
+                    <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div>
+                </div>
+
+                <div class="grid grid-cols-7 gap-2" id="grid-calendario">
+                    
+                </div>
+            </div>
+
+            <div class="bg-[#20464e] text-white rounded-xl p-6 shadow-lg flex flex-col h-full border border-[#2a5a64]">
+                <h3 class="text-xl font-bold border-b border-white/20 pb-3 mb-4" id="fecha-seleccionada">15 de Junio, 2026</h3>
+                
+                <div class="flex-grow space-y-4">
+                    <div class="bg-black/20 p-4 rounded-lg">
+                        <p class="text-xs uppercase tracking-wider text-[#E1F0C4] mb-1">Turno Asignado</p>
+                        <p class="text-2xl font-bold" id="tipo-turno">Turno Mañana</p>
+                        <div class="flex items-center gap-2 mt-2 opacity-80">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            <span class="font-mono text-sm">06:00 - 14:00</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/20 p-4 rounded-lg">
+                        <p class="text-xs uppercase tracking-wider text-[#E1F0C4] mb-1">Ubicación</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="font-bold">Campus Central (Sector A)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="mt-6 w-full py-3 bg-[#E1F0C4] text-[#12282c] font-bold rounded-lg hover:bg-white transition-colors">
+                    Solicitar Cambio
+                </button>
+            </div>
+        </div>
+    </main>
+   <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const dias = document.querySelectorAll('.dia-calendario');
+        
+        dias.forEach(dia => {
+            dia.addEventListener('click', function() {
+                // He removido la clase activa de todos los días
+                dias.forEach(d => d.classList.remove('activo'));
+                // He añadido la clase activa al día seleccionado
+                this.classList.add('activo');
+                
+                // He actualizado el texto del panel (simulación)
+                document.getElementById('fecha-seleccionada').innerText = this.innerText + ' de Junio, 2026';
+            });
+        });
+    </script>
+    <script type="module" src="/src/views/js/main-horariosEmpleados.js"></script>
+</body>
+</html>

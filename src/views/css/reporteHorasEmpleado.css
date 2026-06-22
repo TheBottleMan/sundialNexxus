@@ -1,0 +1,55 @@
+/* --- CONFIGURACIÓN BASE Y FUENTES --- */
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+.fila-registro {
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto hover en las filas para mejorar la lectura */
+.fila-registro:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* --- ETIQUETAS DE ESTADO (BADGES) --- */
+.badge-estado {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px; /* Forma de píldora */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* Colores específicos según el estado del registro */
+.estado-aprobado {
+    background-color: rgba(225, 240, 196, 0.15); /* Fondo verde menta transparente */
+    color: #E1F0C4; /* Texto verde menta */
+    border: 1px solid rgba(225, 240, 196, 0.3);
+}
+
+.estado-pendiente {
+    background-color: rgba(250, 204, 21, 0.15); /* Fondo amarillo transparente */
+    color: #facc15; /* Texto amarillo */
+    border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.estado-descanso {
+    background-color: rgba(156, 163, 175, 0.15); /* Fondo gris transparente */
+    color: #9ca3af; /* Texto gris */
+    border: 1px solid rgba(156, 163, 175, 0.3);
+}
+
+/* --- ICONOS --- */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
